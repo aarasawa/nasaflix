@@ -1,10 +1,15 @@
-import { useAuthStore } from "../../store/authUser";
-import AuthScreen from "./AuthScreen";
-import HomeScreen from "./HomeScreen";
+import HomeScreen from './HomeScreen';
+import AuthScreen from './AuthScreen';
+import { useAuthStore } from '../../store/authUser';
 
 const HomePage = () => {
-	const { user } = useAuthStore();
+  const { user } = useAuthStore();
 
-	return <>{user ? <HomeScreen /> : <AuthScreen />}</>;
-};
+  return (
+    <>
+      {user ? <HomeScreen /> : <AuthScreen />}
+    </>
+  );
+}
+
 export default HomePage;
